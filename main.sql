@@ -73,9 +73,11 @@ GO
 CREATE TABLE ESPECIALIDAD(
 	ID_especialidad					VARCHAR(5) PRIMARY KEY, --Comienza desde el ES001
 	nombre_especialidad				VARCHAR(500) NOT NULL,
+	precio							DECIMAL(10,2) NOT NULL,
 	fecha_registro_esp              DATETIME NOT NULL,
 	Usu_Registro                    VARCHAR(50) NULL,
-	ultima_modificacion             VARCHAR(50) NULL
+	ultima_modificacion             VARCHAR(50) NULL,
+	usu_Ult_Mod						VARCHAR(20) NULL
 	)
 GO
 
@@ -86,15 +88,13 @@ CREATE TABLE MEDICO_HORARIO(
     ID_horario						VARCHAR(4) NOT NULL,
 	ID_medico						VARCHAR(5) NOT NULL,
 	ID_especialidad	                VARCHAR(5) NOT NULL,
-	precio							DECIMAL(10,2) NOT NULL,
-	fecha_inicio                    DATE NOT NULL,
-	fecha_fin                       DATE NOT NULL,
+	dia_atencion					VARCHAR(50) NULL,
 	hora_inicio                     TIME NULL,
 	hora_fin                        TIME NULL,
-    fecha_registro_med          DATETIME NOT NULL,
 	Usu_Registro                    VARCHAR(50) NULL,
-	ultima_modificacion             VARCHAR(50) NULL
-					
+	fecha_registro_med				DATETIME NOT NULL,
+	ultima_modificacion             VARCHAR(50) NULL,
+	usu_Ult_Mod						VARCHAR(20) NULL
 	)
 GO
 
@@ -117,14 +117,14 @@ CREATE TABLE CITA(
 	ID_cita							VARCHAR (5) PRIMARY KEY,  --Comienza desde el C0001
 	fecha_atencion					DATETIME NOT NULL,
 	fecha_registro                  DATETIME NOT NULL,
+	Usu_Registro                    VARCHAR(50) NULL,
 	observaciones_cita				VARCHAR(500) NULL,
 	ID_medico						VARCHAR (5) NOT NULL,
 	ID_especialidad					VARCHAR (5) NOT NULL,
     ID_paciente						VARCHAR (5) NOT NULL,
 	estado_cita					    VARCHAR(100) NOT NULL,
 	ultima_modificacion             DATETIME NULL,
-	Usu_Registro                    VARCHAR(50) NULL,
-	observaciones                   VARCHAR(200) NULL,
+	usu_Ult_Mod						VARCHAR(20) NULL
 	)
 GO
 
